@@ -7,8 +7,11 @@ public enum VNodeState {
     CatchingUp,
     Clone,
     Slave,
+    Follower,
     PreMaster,
+    PreLeader,
     Master,
+    Leader,
     Manager,
     ShuttingDown,
     Shutdown
