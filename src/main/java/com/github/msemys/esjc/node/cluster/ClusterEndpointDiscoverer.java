@@ -195,9 +195,9 @@ public class ClusterEndpointDiscoverer implements EndpointDiscoverer {
             if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
                 try (BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream(), "UTF-8"))) {
                     final Optional<ClusterInfoDto> clusterInfoDto = Optional.of(gson.fromJson(new JsonReader(reader), ClusterInfoDto.class));
-                    logger.info("tryGetGossipFrom: "+clusterInfoDto.get().members.size());
+                    logger.debug("ClusterInfo members size: "+clusterInfoDto.get().members.size());
                     for (MemberInfoDto m: clusterInfoDto.get().members) {
-                        logger.info("tryGetGossipFrom members: "+m);
+                        logger.debug("Cluster member: "+m);
                     }
                     return clusterInfoDto;
                 }
