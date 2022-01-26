@@ -9,7 +9,7 @@ public enum VNodeState {
     Slave,
     Follower,
     PreMaster,
-    PreLeder,
+    PreLeader,
     Master,
     Leader,
     Manager,
